@@ -1,104 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Counter App</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: grey;
+      }
 
-        .counter-container {
-            text-align: center;
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+      .counter-container {
+        text-align: center;
+        background: rgb(167, 166, 166);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
 
-        #counter {
-            font-size: 3rem;
-            margin: 20px 0;
-            color: #333;
-        }
+      #counter {
+        font-size: 3rem;
+        margin: 20px 0;
+        color: #333;
+      }
 
-        .buttons button {
-            padding: 10px 20px;
-            margin: 5px;
-            font-size: 1rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+      .buttons button {
+        padding: 10px 20px;
+        margin: 5px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
 
-        #increment {
-            background-color: #4caf50;
-            color: white;
-        }
+      #increment {
+        background-color: #4caf50;
+        color: white;
+      }
 
-        #decrement {
-            background-color: #f44336;
-            color: white;
-        }
+      #decrement {
+        background-color: #f44336;
+        color: white;
+      }
 
-        #reset {
-            background-color: #2196f3;
-            color: white;
-        }
+      #reset {
+        background-color: #2196f3;
+        color: white;
+      }
 
-        .buttons button:hover {
-            opacity: 0.9;
-        }
+      .buttons button:hover {
+        opacity: 0.9;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="counter-container">
-        <h1>Simple Counter</h1>
-        <div id="counter">0</div>
-        <div class="buttons">
-            <button id="increment">Increment</button>
-            <button id="decrement">Decrement</button>
-            <button id="reset">Reset</button>
-        </div>
+      <h1>Simple Counter</h1>
+      <div id="counter">0</div>
+      <div class="buttons">
+        <button id="increment">Increment</button>
+        <button id="decrement">Decrement</button>
+        <button id="reset">Reset</button>
+      </div>
     </div>
 
     <script>
-        // Select DOM elements
-        const counter = document.getElementById("counter");
-        const incrementBtn = document.getElementById("increment");
-        const decrementBtn = document.getElementById("decrement");
-        const resetBtn = document.getElementById("reset");
+      // Select DOM elements
+      const counter = document.getElementById("counter");
+      const incrementBtn = document.getElementById("increment");
+      const decrementBtn = document.getElementById("decrement");
+      const resetBtn = document.getElementById("reset");
 
-        // Initialize counter value
-        let count = 0;
+      // Initialize counter value
+      let count = 0;
 
-        // Function to update the display
-        function updateCounter() {
-            counter.textContent = count;
-        }
+      // Function to update the display
+      function updateCounter() {
+        counter.textContent = count;
+      }
 
-        // Event listeners for buttons
-        incrementBtn.addEventListener("click", () => {
-            count++;
-            updateCounter();
-        });
+      // Event listeners for buttons
+      incrementBtn.addEventListener("click", () => {
+        count++;
+        updateCounter();
+      });
 
-        decrementBtn.addEventListener("click", () => {
-            count--;
-            updateCounter();
-        });
+      decrementBtn.addEventListener("click", () => {
+        count--;
+        updateCounter();
+      });
 
-        resetBtn.addEventListener("click", () => {
-            count = 0;
-            updateCounter();
-        });
+      resetBtn.addEventListener("click", () => {
+        count = 0;
+        updateCounter();
+      });
     </script>
-</body>
+  </body>
 </html>
