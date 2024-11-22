@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Counter App</title>
+    <title>Digital Business Card</title>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -15,90 +15,81 @@
         background-color: grey;
       }
 
-      .counter-container {
-        text-align: center;
-        background: rgb(167, 166, 166);
+      .card {
+        background-color: #c4c2c2;
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 300px;
       }
 
-      #counter {
-        font-size: 3rem;
-        margin: 20px 0;
+      .card h2 {
+        margin: 10px 0;
         color: #333;
       }
 
+      .card p {
+        margin: 5px 0;
+        color: #555;
+      }
+
+      .buttons {
+        margin-top: 15px;
+      }
+
       .buttons button {
-        padding: 10px 20px;
+        padding: 10px 15px;
         margin: 5px;
-        font-size: 1rem;
+        font-size: 14px;
         border: none;
         border-radius: 5px;
         cursor: pointer;
-      }
-
-      #increment {
-        background-color: #4caf50;
-        color: white;
-      }
-
-      #decrement {
-        background-color: #f44336;
-        color: white;
-      }
-
-      #reset {
         background-color: #2196f3;
         color: white;
       }
 
       .buttons button:hover {
-        opacity: 0.9;
+        background-color: #1976d2;
       }
     </style>
   </head>
   <body>
-    <div class="counter-container">
-      <h1>Simple Counter</h1>
-      <div id="counter">0</div>
+    <div class="card">
+      <h2 id="name">John Doe</h2>
+      <p id="email">Email: john.doe@example.com</p>
+      <p id="phone">Phone: 123-456-7890</p>
       <div class="buttons">
-        <button id="increment">Increment</button>
-        <button id="decrement">Decrement</button>
-        <button id="reset">Reset</button>
+        <button
+          onclick="updateInfo('Alice', 'alice@example.com', '987-654-3210')"
+        >
+          Switch to Alice
+        </button>
+        <button onclick="updateInfo('Bob', 'bob@example.com', '555-666-7777')">
+          Switch to Bob
+        </button>
       </div>
     </div>
 
     <script>
-      // Select DOM elements
-      const counter = document.getElementById("counter");
-      const incrementBtn = document.getElementById("increment");
-      const decrementBtn = document.getElementById("decrement");
-      const resetBtn = document.getElementById("reset");
+      // Define a JavaScript object for the business card details
+      const person = {
+        name: "John Doe",
+        email: "john.doe@example.com",
+        phone: "123-456-7890",
+      };
 
-      // Initialize counter value
-      let count = 0;
+      // Function to update the card information dynamically
+      function updateInfo(name, email, phone) {
+        person.name = name;
+        person.email = email;
+        person.phone = phone;
 
-      // Function to update the display
-      function updateCounter() {
-        counter.textContent = count;
+        // Update the DOM elements with the new details
+        document.getElementById("name").textContent = person.name;
+        document.getElementById("email").textContent = "Email: " + person.email;
+        document.getElementById("phone").textContent = "Phone: " + person.phone;
       }
-
-      // Event listeners for buttons
-      incrementBtn.addEventListener("click", () => {
-        count++;
-        updateCounter();
-      });
-
-      decrementBtn.addEventListener("click", () => {
-        count--;
-        updateCounter();
-      });
-
-      resetBtn.addEventListener("click", () => {
-        count = 0;
-        updateCounter();
-      });
     </script>
   </body>
 </html>
