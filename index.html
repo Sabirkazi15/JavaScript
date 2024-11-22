@@ -44,6 +44,27 @@
       <button onclick="Sabir()">Switch to Sabir</button>
       <button onclick="Sidiiq()">Switch to Siddiq</button>
     </div>
-    <script></script>
+    <script>
+        const person1 = {
+            name: "Sabir",
+            email: "sabirkazi@gmail.com",
+            phone: "8660515983"
+        }
+        const person2 = {
+            name: "Siddiq",
+            email: "siddiquntwale@gmail.com",
+            phone: "9876543578"
+        }
+        function Sabir() {
+            document.getElementById("name").innerHTML = person1.name;
+            document.getElementById("email").innerHTML = person1.email;
+            document.getElementById("phone").innerHTML = person1.phone;
+        }
+        function Siddiq() {
+            document.getElementById("name").innerHTML = person2.name;
+            document.getElementById("email").innerHTML = person2.email;
+            document.getElementById("phone").innerHTML = person2.phone;
+        }
+    </script>
   </body>
 </html>
