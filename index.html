@@ -54,8 +54,26 @@
   <body>
     <div>
       <h1>Simple Counter</h1>
-      <p>0</p>
-      <button>Increment</button><button>Decrement</button><button>Reset</button>
+      <p id="result">0</p>
+      <button onclick="Inc()">Increment</button
+      ><button onclick="Dic()">Decrement</button
+      ><button onclick="Res()">Reset</button>
     </div>
+    <script>
+      var count = 0;
+
+      function Res() {
+        count = 0;
+        document.getElementById("result").innerHTML = count;
+      }
+      function Inc() {
+        count++;
+        document.getElementById("result").innerHTML = count;
+      }
+      function Dic() {
+        count--;
+        document.getElementById("result").innerHTML = count;
+      }
+    </script>
   </body>
 </html>
